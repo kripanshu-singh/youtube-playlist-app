@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  images: {
+    domains: [
+      "i.ytimg.com",
+      "images.unsplash.com",
+      "lh3.googleusercontent.com",
+    ], // Add YouTube's image domain
+  },
 };
 
 export default nextConfig;
