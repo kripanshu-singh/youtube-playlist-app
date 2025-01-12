@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YouTube Playlist Data Retriever
 
-## Getting Started
+A Next.js application to fetch and display playlists and their contents from a YouTube channel using the YouTube Data API v3. This app features authentication via Google, making it easy to access user-specific playlists.
 
-First, run the development server:
+## Features
+
+- Google Sign-In for user authentication.
+- Fetch and display YouTube playlists owned by the authenticated user.
+- Display enriched playlist information, including video count and privacy status.
+- Secure token management using `next-auth`.
+- Responsive and visually appealing design.
+
+## Tech Stack
+
+- **Next.js**: Framework for building React-based web applications.
+- **TypeScript**: Strongly typed programming language for type safety.
+- **next-auth**: Authentication library for managing user sessions.
+- **YouTube Data API v3**: API to fetch YouTube playlists and videos.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Google OAuth**: Authentication provider for secure sign-ins.
+
+## Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+|-- src
+|   |-- app
+|       |-- api
+|           |-- auth
+|               |-- [...nextauth]
+|                   |-- route.ts       # NextAuth configuration
+|           |-- playlists
+|               |-- route.ts          # API to fetch YouTube playlists
+|   |-- components                    # Reusable UI components
+|   |-- pages                         # Page-level components
+|-- public                            # Static assets
+|-- styles                            # Global and custom CSS
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Files
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### `src/app/api/auth/[...nextauth]/route.ts`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Handles Google authentication and session management using `next-auth`.
 
-## Learn More
+### `src/app/api/playlists/route.ts`
 
-To learn more about Next.js, take a look at the following resources:
+Fetches YouTube playlists and enriches them with additional details like video count and privacy status.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is licensed under the [MIT License](LICENSE).
 
-## Deploy on Vercel
+## Acknowledgments
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [YouTube Data API v3 Documentation](https://developers.google.com/youtube/v3)
+- [next-auth Documentation](https://next-auth.js.org/getting-started/introduction)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+Feel free to contribute by submitting issues or pull requests!
